@@ -1,0 +1,71 @@
+package com.example.android.newsfeed;
+
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.net.Uri;
+import androidx.loader.content.AsyncTaskLoader;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import java.lang.ref.SoftReference;
+
+/**
+ * An {@link AsyncTaskLoader} that loads either sections or tags
+ */
+class ItemsLoader extends AsyncTaskLoader<String[][]> {
+    /**
+     * The url to use to fetch the items
+     */
+    private final Uri mUrl;
+    /**
+     * The Empty view used by the list view
+     */
+    private final SoftReference<LinearLayout> mEmptyView;
+
+    /**
+     * @param context   The {@link Context} of the app
+     * @param url       The url to query from
+     * @param emptyView The empty view to change based on internet connectivity
+     */
+    ItemsLoader(Context context, Uri url, LinearLayout emptyView) {
+        super(context);
+        mUrl = url;
+        mEmptyView = new SoftReference<>(emptyView);
+    }
+
+    @Override
+    protected void onStartLoading() {
+        ConnectivityManager cm =
+                (ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        assert null != cm;
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        boolean isNotConnected = !((null != activeNetwork) &&
+                activeNetwork.isConnectedOrConnecting());
+        LinearLayout emptyView = mEmptyView.get();
+        if (null != emptyView) {
+            // If there is no internet connection, then tell the user
+            // to check their connection and return
+            if (isNotConnected) {
+                ((TextView) emptyView.getChildAt(0)).setText(R.string.no_internet);
+                emptyView.getChildAt(1).setVisibility(View.VISIBLE);
+                emptyView.getChildAt(2).setVisibility(View.GONE);
+                return;
+            }
+            // Tell the users to wait until we get the news
+            ((TextView) emptyView.getChildAt(0)).setText(R.string.please_wait);
+            emptyView.getChildAt(1).setVisibility(View.GONE);
+            emptyView.getChildAt(2).setVisibility(View.VISIBLE);
+            mEmptyView.clear();
+        }
+        forceLoad();
+    }
+
+    @Override
+    public String[][] loadInBackground() {
+        // Return the list of items.
+        return QueryUtils.getItemsFromStringUrl(mUrl.toString());
+    }
+}

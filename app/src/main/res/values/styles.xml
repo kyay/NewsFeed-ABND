@@ -1,0 +1,37 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- A workaround to prevent the "cardViewStyle not found" preview error -->
+        <item name="cardViewStyle">@style/CardView</item>
+
+
+        <!-- SearchView attributes-->
+        <item name="autoCompleteTextViewStyle">@style/Widget.AppCompat.AutoCompleteTextView.Light
+        </item>
+        <item name="textAppearanceSearchResultTitle">
+            @style/TextAppearance.AppCompat.SearchResult.Title.Light
+        </item>
+    </style>
+
+    <style name="Widget.AppCompat.AutoCompleteTextView.Light">
+        <item name="android:popupBackground">@android:color/white</item>
+    </style>
+
+    <style name="TextAppearance.AppCompat.SearchResult.Title.Light">
+        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+    </style>
+
+    <style name="NewsDetails">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorNewsDetails</item>
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">sans-serif-medium</item>
+    </style>
+
+</resources>

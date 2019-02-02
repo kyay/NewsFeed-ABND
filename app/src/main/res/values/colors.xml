@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- The color for the details of the news -->
+    <color name="colorNewsDetails">#ced7db</color>
+
+    <!-- The color for the title of the news -->
+    <color name="colorNewsTitle">#d7ccc8</color>
+    <color name="color_image_foreground">#77000000</color>
+</resources>

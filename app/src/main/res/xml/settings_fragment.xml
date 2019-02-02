@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.example.android.newsfeed.SearchableMultiSelectListPreference
+        android:key="@string/settings_sections_key"
+        android:title="@string/settings_sections_label" />
+    <com.example.android.newsfeed.SearchableMultiSelectListPreference
+        android:key="@string/settings_tags_key"
+        android:title="@string/settings_tags_label" />
+</PreferenceScreen>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!-- An Image view that is exactly as big as the text -->
+        <ImageView
+            android:id="@+id/background_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@id/news_content"
+            android:layout_alignEnd="@id/news_content"
+            android:layout_alignLeft="@id/news_content"
+            android:layout_alignRight="@id/news_content"
+            android:layout_alignStart="@id/news_content"
+            android:layout_alignTop="@id/news_content"
+            android:contentDescription="@string/news_image_desc"
+            android:scaleType="centerCrop"
+            tools:src="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:id="@+id/news_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_image_foreground"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/news_content_padding_vertical"
+            android:paddingLeft="@dimen/news_content_padding_horizontal"
+            android:paddingRight="@dimen/news_content_padding_horizontal"
+            android:paddingTop="@dimen/news_content_padding_vertical">
+
+            <TextView
+                android:id="@+id/source_category_text_view"
+                style="@style/NewsDetails"
+                android:breakStrategy="simple"
+                android:textAllCaps="true"
+                tools:ignore="UnusedAttribute"
+                tools:text="From: Fox News" />
+
+            <TextView
+                android:id="@+id/title_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/colorNewsTitle"
+                android:textSize="18sp"
+                tools:text="Florida beachgoer who took queen conch shells sentenced to 15 days in jail" />
+
+            <TextView
+                android:id="@+id/description_text_view"
+                style="@style/NewsDetails"
+                android:ellipsize="end"
+                android:maxLines="2"
+                tools:text="A Florida Fish and Wildlife Conservation Commission officer reportedly arrested Diana Fiscal-Gonzalez at a Key West home in July 2017." />
+
+            <TextView
+                android:id="@+id/date_author_text_view"
+                style="@style/NewsDetails"
+                android:layout_marginTop="8dp"
+                tools:text="Jul 19, 2018 at 05:55 PM        By: Zoe Szathmary and another person" />
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

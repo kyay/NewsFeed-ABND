@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="news_content_padding_vertical">8dp</dimen>
+    <dimen name="news_content_padding_horizontal">24dp</dimen>
+    <dimen name="news_item_inner_margin">8dp</dimen>
+</resources>

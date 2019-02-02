@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">News Feed</string>
+
+    <!-- Empty view strings -->
+    <string name="no_data_found">No data was found.</string>
+    <string name="please_wait">Please wait while we get the data</string>
+    <string name="try_again">Try again</string>
+    <string name="no_internet">Please check your Internet connection</string>
+
+    <string name="settings_sections_label">Sections</string>
+    <string name="settings_sections_key" translatable="false">sections</string>
+
+    <string name="settings_tags_label">Tags</string>
+    <string name="settings_tags_key" translatable="false">tags</string>
+
+    <!-- Label for order-by magnitude option [CHAR LIMIT=20] -->
+
+    <!-- Label for order-by most recent option [CHAR LIMIT=20] -->
+
+    <!-- Internal news-related values -->
+    <string name="news_from_source">From: %1$s %2$s</string>
+    <string name="news_by_author">By: %s</string>
+    <string name="news_at_date">at</string>
+    <string name="news_image_desc">News Image</string>
+    <string name="news_page_size_name">page-size</string>
+    <string name="news_page_name">page</string>
+    <string name="news_api_key_name">api-key</string>
+    <string name="news_query_fields_name">show-fields</string>
+    <string name="news_query_fields_value">trailText,byline,main,productionOffice,publication</string>
+
+    <!-- The refresh string for the button in the overflow menu -->
+    <string name="menu_refresh">Refresh</string>
+
+    <!-- Settings Menu Item [CHAR LIMIT=NONE] -->
+    <string name="settings_menu_item">Settings</string>
+    <!-- Settings Activity Title [CHAR LIMIT=NONE] -->
+    <string name="search_general_hint">Search</string>
+    <string name="search_news_hint">Search News</string>
+
+    <string name="clear_history_dialog_msg">Clear all Search History?</string>
+    <string name="clear_history_yes">Clear Search History</string>
+</resources>
